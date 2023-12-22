@@ -11,31 +11,24 @@ class Config:
         self.beta0 = 1e-4 # start
         self.beta1 = 0.02 # end
 
-        '''
-        train hyperparameters
-        '''
+        # train hyperparameters
         self.batch = 64
         self.lr = 1e-4
         self.epochs = 10
         self.save_period = 5
         self.sample_period =1
-
-        '''
-        inference
-        '''
+        
+        # inference
         self.steps = 500
         self.num_images = 32
 
-        '''
-        model hyperparameters
-        '''
+        # model hyperparameters
         self.base_channels = 64
         self.timestep_embed_dim = 64
         self.timestep_proj_dim = 256
         self.layers = 2
+        self.input_channels = 1
 
-        '''
-        others
-        '''
+        # others
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.clip = 1.0
