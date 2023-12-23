@@ -14,15 +14,16 @@ class Config:
         # train hyperparameters
         self.batch = 64
         self.lr = 1e-4
-        self.epochs = 10
+        self.epochs = 1
         self.save_period = 5
         self.sample_period =1
         
         # inference
         self.steps = 500
-        self.num_images = 32
+        self.num_inf_images = 32
 
         # model hyperparameters
+        self.seed = 42
         self.base_channels = 64
         self.timestep_embed_dim = 64
         self.timestep_proj_dim = 256
