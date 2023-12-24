@@ -12,13 +12,9 @@ class Config:
         self.beta1 = 0.02 # end
 
         # train hyperparameters
-        self.batch = 64
-        self.lr = 1e-4
-<<<<<<< HEAD
-        self.epochs = 1
-=======
+        self.batch = 128
+        self.lr = 5e-4
         self.epochs = 10
->>>>>>> 267e6a9... remove big file
         self.save_period = 5
         self.sample_period =1
         

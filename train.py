@@ -47,12 +47,13 @@ for epoch in range(config.epochs):
         progress_bar.update(1)
         logs = {'loss': loss.detach().item(), 'epoch': epoch+1, 'orig_grad': orig_grad}
         progress_bar.set_postfix(**logs)
+        
     
     model.eval()
-    image = inference(scheduler, config.num_inf_images, config)
+    image = inference(model, scheduler, config.num_inf_images, config)
     image = (image / 2 + 0.5).clamp(0, 1)
     plot_images(image, save_dir=save_dir)
-    print('Max_Cudamemory_Allocated:{}'.format(torch.cuda.max_memory_allocated() / 1024 / 1024 / 1024))
+    # print('Max_Cudamemory_Allocated:{}'.format(torch.cuda.max_memory_allocated() / 1024 / 1024 / 1024))
 
 
 # save checkpoints

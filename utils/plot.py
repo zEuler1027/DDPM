@@ -54,7 +54,7 @@ def plot_images(
     # 将 plot 保存为图像，还是直接显示
     if save_dir is not None:
         if not os.path.exists(save_dir):
-            os.mkdir(save_dir)
+            os.makedirs(save_dir)
 
         from datetime import datetime
         _title = save_title if save_title is not None else "no title"

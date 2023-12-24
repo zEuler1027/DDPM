@@ -10,7 +10,7 @@ def inference(model, scheduler, images: int, config: Config, noise: Optional[tor
 
     for t in scheduler.inf_timesteps:
         with torch.no_grad():
-            noisy_pred = model(noisy_sample, t[None].to(config.device)).sample
+            noisy_pred = model(noisy_sample, t[None].to(config.device))
             noisy_sample = scheduler.step(noisy_pred, t, noisy_sample)
             
     return noisy_sample
